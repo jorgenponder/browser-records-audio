@@ -3,6 +3,16 @@ const fs = require("fs");
 const Xvfb = require('xvfb');
 const file = fs.createWriteStream(__dirname + "/test.webm");
 const {executablePath} = require('puppeteer');
+const { program } = require('commander');
+
+
+program
+  .requiredOption('-u, --url <char>')
+  .requiredOption('-c, --selector <char>')
+  .requiredOption('-t, --duration <number>');
+program.parse();
+const options = program.opts()
+
 async function test() {
 
     var xvfb = new Xvfb({
@@ -20,8 +30,8 @@ async function test() {
         });
 
         const page = await browser.newPage();
-        await page.goto("https://www.address.to.example.com/page-to-record");
-        page.click('.play-button')
+        await page.goto(options.url);
+        await page.click(options.selector)
         const stream = await getStream(page, { audio: true, video: true });
         console.log("recording");
 
@@ -30,7 +40,7 @@ async function test() {
                 await stream.destroy();
                 file.close();
                 console.log("finished");
-        }, 1000 * 10);
+        }, 1000 * options.duration);
 }
 
 test();
