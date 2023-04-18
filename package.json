@@ -1,0 +1,16 @@
+{
+  "name": "headless-recording",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.9.1",
+    "puppeteer-stream": "^3.0.3",
+    "xvfb": "^0.4.0"
+  }
+}
