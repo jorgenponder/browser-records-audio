@@ -1,6 +1,6 @@
 {
   "name": "headless-recording",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^10.0.1",
     "puppeteer": "^19.9.1",
     "puppeteer-stream": "^3.0.3",
     "xvfb": "^0.4.0"
