@@ -13,6 +13,12 @@ Install xvfb:
     
 Run ```node install``` on the repository.
 
-Edit the js file with your url, your interface element to start the playing, and your duration of recording.
+## Usage
+
+The script takes three command line parameters:
+
+ -u, --url : what pages to record from
+ -c, --selector : what element to click at to start the sound
+ -t, --duration : how long to record for in seconds
 
 The resulting file with sound and some kind of video will be in ```test.webm``` .
